@@ -19,7 +19,7 @@ connection.query(insertStatement);
 app.get('/', async (req, res) => {
     try {
         const people = await getPeople(connection, 'SELECT * FROM people');
-        res.send(`Fullcycle Rocks! \n ${people.map(p => p.name).join('\n')}`);
+        res.send(`<h1>Full Cycle Rocks!</h1> \n ${people.map(p => p.name).join('\n')}`);
     } catch (error) {
         console.error(error);
         res.status(500).send('Internal Server Error');
